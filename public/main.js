@@ -5,6 +5,7 @@ const subtractButton1 = document.querySelector('.team-1-subtract-1-button')
 const addButton2 = document.querySelector('.team-2-add-1-button')
 const subtractButton2 = document.querySelector('.team-2-subtract-1-button')
 const resetButton = document.querySelector('.reset-button')
+const addPeriod = document.querySelector('.add-period')
 
 const updateTeamName1 = () => {
   const newTeamName1 = document.querySelector('.team-1-input').value
@@ -28,7 +29,10 @@ const addTeam1 = () => {
     const buttons = document.querySelectorAll('button')
     buttons.forEach(button => (button.disabled = true))
     resetButton.disabled = false
-    document.querySelector('.team1-end-game-message').textContent = 'WINNER!'
+    document.querySelector('.team1-end-game-message').textContent = 'Winner'
+    document.querySelector('.team2-end-game-message').textContent = 'Loser'
+    document.querySelector('.team-1-score').classList.add('winner')
+    document.querySelector('.team-2-score').classList.add('loser')
   }
 }
 
@@ -44,7 +48,10 @@ const addTeam2 = () => {
     const buttons = document.querySelectorAll('button')
     buttons.forEach(button => (button.disabled = true))
     resetButton.disabled = false
-    document.querySelector('.team2-end-game-message').textContent = 'WINNER!'
+    document.querySelector('.team2-end-game-message').textContent = 'Winner'
+    document.querySelector('.team1-end-game-message').textContent = 'Loser'
+    document.querySelector('.team-1-score').classList.add('loser')
+    document.querySelector('.team-2-score').classList.add('winner')
   }
 }
 
@@ -68,6 +75,18 @@ const subtractTeam2 = () => {
   }
 }
 
+const subtract1Period = () => {
+  const currentPeriod = parseInt(document.querySelector('.period').textContent)
+  const newPeriod = currentPeriod - 1
+  document.querySelector('.period').textContent = newPeriod
+}
+
+const add1Period = () => {
+  const currentPeriod = parseInt(document.querySelector('.period').textContent)
+  const newPeriod = currentPeriod + 1
+  document.querySelector('.period').textContent = newPeriod
+}
+
 const resetGame = () => {
   document.querySelector('.team-1-score').textContent = 0
   document.querySelector('.team-2-score').textContent = 0
@@ -75,6 +94,10 @@ const resetGame = () => {
   buttons.forEach(button => (button.disabled = false))
   document.querySelector('.team1-end-game-message').textContent = ''
   document.querySelector('.team2-end-game-message').textContent = ''
+  document.querySelector('.team-1-score').classList.remove('winner')
+  document.querySelector('.team-1-score').classList.remove('loser')
+  document.querySelector('.team-2-score').classList.remove('winner')
+  document.querySelector('.team-2-score').classList.remove('loser')
 }
 
 updateButton1.addEventListener('click', updateTeamName1)
@@ -84,3 +107,4 @@ addButton2.addEventListener('click', addTeam2)
 subtractButton1.addEventListener('click', subtractTeam1)
 subtractButton2.addEventListener('click', subtractTeam2)
 resetButton.addEventListener('click', resetGame)
+addPeriod.addEventListener('click', add1Period)

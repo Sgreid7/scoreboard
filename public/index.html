@@ -5,55 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Scoreboard</title>
     <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cardo&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/screen.css" />
   </head>
   <body>
-    <h1>My Score Board</h1>
+    <header>
+      <h1>Tampa Bay Lightning</h1>
+      <h2>NHL Scoreboard</h2>
+      <div>
+        <h3>Period: <span class="period">1</span></h3>
+        <button class="add-period">+</button>
+      </div>
+    </header>
     <section class="teams">
       <section class="team one">
         <section>
           <h2 class="team-1-name">Team 1</h2>
-          <p class="team-1-score">10</p>
-          <h3 class="team1-end-game-message"></h3>
+          <section>
+            <input
+              type="text"
+              class="team-1-input"
+              placeholder="Insert team name..."
+            />
+            <div class="update-btn">
+              <button class="update-team-1-name">Update</button>
+            </div>
+          </section>
+          <p class="team-1-score">0</p>
+          <h3 class="note team1-end-game-message"></h3>
         </section>
         <section>
-          <section>
-            update team 1 name
-            <input type="text" class="team-1-input" />
-            <button class="update-team-1-name">Update</button>
-          </section>
-          <section>
-            update team 1 score
-            <button class="team-1-add-1-button">add 1</button>
-            <button class="team-1-subtract-1-button">subtract 1</button>
+          <section class="add-subtract">
+            <button class="score team-1-add-1-button">+</button>
+            <button class="score team-1-subtract-1-button">-</button>
           </section>
         </section>
       </section>
       <section class="team two">
         <section>
           <h2 class="team-2-name">Team 2</h2>
-          <p class="team-2-score">10</p>
-          <h3 class="team2-end-game-message"></h3>
+          <section>
+            <input
+              type="text"
+              class="team-2-input"
+              placeholder="Insert team name..."
+            />
+            <div class="update-btn">
+              <button class="update-team-2-name">Update</button>
+            </div>
+          </section>
+          <p class="team-2-score">0</p>
+          <h3 class="note team2-end-game-message"></h3>
         </section>
 
         <section>
-          <section>
-            update team 2 name
-            <input type="text" class="team-2-input" />
-            <button class="update-team-2-name">Update</button>
-          </section>
-          <section>
-            update team 2 score
-            <button class="team-2-add-1-button">add 1</button>
-            <button class="team-2-subtract-1-button">subtract 1</button>
+          <section class="add-subtract">
+            <button class="score team-2-add-1-button">+</button>
+            <button class="score team-2-subtract-1-button">-</button>
           </section>
         </section>
       </section>
     </section>
 
-    <section>
-      <button class="reset-button">Reset</button>
-    </section>
+    <footer>
+      <button class="reset-button">RESET</button>
+    </footer>
     <script src="/main.js" charset="utf-8"></script>
   </body>
 </html>
